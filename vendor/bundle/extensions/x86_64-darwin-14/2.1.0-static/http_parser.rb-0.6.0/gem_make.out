@@ -1,0 +1,14 @@
+/Users/davidrouse/.rvm/rubies/ruby-2.1.5/bin/ruby -r ./siteconf20150816-31777-bi6ew3.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling ruby_http_parser.c
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.bundle
+ld: warning: directory not found for option '-L/Users/mpapis/.sm/pkg/active/lib'
+
+make "DESTDIR=" install
+/usr/bin/install -m 0755 ruby_http_parser.bundle ./.gem.20150816-31777-1097n81
+installing default ruby_http_parser libraries
