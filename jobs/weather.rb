@@ -1,11 +1,24 @@
 require 'net/http'
 require 'xmlsimple'
- 
+require 'yaml'
+
 # Get a WOEID (Where On Earth ID)
 # for your location from here:
 # http://woeid.rosselliot.co.nz/
-woe_id = 0000 
- 
+
+#TODO:  Using a YAML file right now.  Need to do something more elegant with environment variables down the road.  This is a make it work for now
+
+yamlFile = "./jobs/environment_variables.yaml"
+if File.exist?(yamlFile)
+  weather_config = YAML.load_file(yamlFile)
+  woe_id = weather_config[:WOE_ID]
+else
+  #see what the weather is like in Fargo
+  woe_id = 2402292
+end
+
+
+
 # Temerature format:
 # 'c' for Celcius
 # 'f' for Fahrenheit
